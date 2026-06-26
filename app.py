@@ -27,7 +27,7 @@ def evaluate_answer(student_ans, q_id):
 
     # RULE 1: NEGATIVE KEYWORD CHECK - Opposite concept
     def evaluate_answer(student_ans, q_id):
-    student_lower = student_ans.lower().strip()
+        student_lower = student_ans.lower().strip()
     max_score = 5
     
     # RULE 1: NEGATIVE KEYWORD CHECK - Q4 ku mattum
