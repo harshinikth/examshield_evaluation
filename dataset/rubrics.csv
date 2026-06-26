@@ -1,7 +1,42 @@
 question_id,question,key_point,marks,model_answer
-1,What does ML stand for?,Mentions "Machine Learning" full form,2,ML stands for Machine Learning
-1,What does ML stand for?,Explains it is a system that learns from data,3,A system that learns from data
-2,Explain supervised learning,Defines supervised learning with labeled data,5,Uses labeled data for training
-2,Explain supervised learning,Gives example like classification or regression,5,Like spam detection or house price prediction
-3,What is overfitting?,Defines memorizing training data including noise,5,Model learns noise in training data
-3,What is overfitting?,Mentions poor performance on new data,5,Fails on test data
+1,Define Artificial Intelligence,Explains simulation of human intelligence,2,Simulation of human intelligence by machines
+1,Define Artificial Intelligence,Mentions machines can think or learn,3,Machines that can think and learn
+2,What does ML stand for?,Mentions Machine Learning full form,2,ML stands for Machine Learning
+2,What does ML stand for?,Explains system learns from data without explicit programming,3,System that learns from data
+3,List three types of Machine Learning,Names Supervised Learning,2,Supervised Learning
+3,List three types of Machine Learning,Names Unsupervised Learning,2,Unsupervised Learning
+3,List three types of Machine Learning,Names Reinforcement Learning,1,Reinforcement Learning
+4,Explain Supervised Learning,Defines learning with labeled data,3,Uses labeled input-output data
+4,Explain Supervised Learning,Gives example like classification,2,Example spam detection
+5,Explain Unsupervised Learning,Defines learning with unlabeled data,3,Finds patterns in unlabeled data
+5,Explain Unsupervised Learning,Gives example like clustering,2,Example customer segmentation
+6,What is Reinforcement Learning?,Defines learning through rewards and penalties,3,Agent learns by rewards and penalties
+6,What is Reinforcement Learning?,Gives example like game playing AI,2,Example AlphaGo
+7,Define Neural Network,Explains network of interconnected nodes,3,Network of artificial neurons
+7,Define Neural Network,Mentions input hidden output layers,2,Has input hidden and output layers
+8,What is Deep Learning?,Defines neural networks with many layers,3,Neural networks with many hidden layers
+8,What is Deep Learning?,Mentions requires large data,2,Needs large datasets
+9,Explain Overfitting,Defines model memorizing training data,3,Model learns noise in training data
+9,Explain Overfitting,Mentions poor performance on test data,2,Performs badly on new data
+10,What is Underfitting?,Defines model too simple to learn pattern,3,Model cannot capture underlying trend
+10,What is Underfitting?,Mentions poor performance on training data,2,High error on training data
+11,Define NLP,Expands Natural Language Processing,2,Natural Language Processing
+11,Define NLP,Explains interaction between computers and human language,3,Computers understanding human language
+12,What is Computer Vision?,Defines enabling machines to interpret images,3,Machines can see and interpret images
+12,What is Computer Vision?,Gives example like face recognition,2,Example face unlock
+13,Explain Training Data,Defines data used to teach the model,3,Data used for learning
+13,Explain Training Data,Differentiates from test data,2,Separate from test data
+14,What is Test Data?,Defines data used to evaluate model,3,Data to check model performance
+14,What is Test Data,Mentions unseen during training,2,Not used in training
+15,Define Algorithm in ML,Explains step by step procedure to learn,3,Set of rules for learning from data
+15,Define Algorithm in ML,Gives example like Linear Regression,2,Example Decision Tree
+16,What is Feature in ML?,Defines individual measurable property,3,Input variable for model
+16,What is Feature in ML?,Gives example like age or height,2,Example house size
+17,Explain Model in ML,Defines output of training algorithm,3,Learned representation from data
+17,Explain Model in ML,Mentions used for prediction,2,Used to make predictions
+18,What is Accuracy?,Defines ratio of correct predictions,3,Correct predictions divided by total
+18,What is Accuracy?,Mentions percentage measure,2,Expressed as percentage
+19,Define Precision,Explains true positives over predicted positives,3,TP divided by TP plus FP
+19,Define Precision,Mentions focus on false positives,2,Measures exactness
+20,Define Recall,Explains true positives over actual positives,3,TP divided by TP plus FN
+20,Define Recall,Mentions focus on false negatives,2,Measures completeness
