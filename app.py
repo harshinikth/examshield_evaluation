@@ -15,28 +15,42 @@ rubrics = load_rubrics()
 
 st.set_page_config(page_title="ExamShield", layout="wide")
 st.title("EXAMSHIELD: Semantic Answer Evaluator")
-st.write("Meaning purunja marks. AI understands your answer, not just keywords.")
+st.write("Meaning purunja marks. Opposite concept sonna 0.")
 
 def evaluate_answer(student_ans, q_id):
     q_rubric = rubrics[rubrics['question_id'] == q_id]
-    total_score = 0
     max_score = q_rubric['marks'].sum()
-    details = []
-
+    
     if not student_ans.strip():
         return 0, max_score, ["❌ No answer provided"]
+
+    # NEGATIVE KEYWORD CHECK - Opposite concept check
+    student_lower = student_ans.lower()
+    
+    # Q4: Supervised Learning - "unlabeled" vandha wrong
+    if q_id == 4:
+        if any(word in student_lower for word in ['unlabel', 'unsupervised', 'without label']):
+            return 0, max_score, ["❌ Wrong! Supervised Learning uses LABELED data, not unlabeled data."]
+    
+    # Q5: Unsupervised Learning - "labeled" vandha wrong 
+    if q_id == 5:
+        if 'label' in student_lower and 'unlabel' not in student_lower:
+            return 0, max_score, ["❌ Wrong! Unsupervised Learning uses UNLABELED data, not labeled data."]
+
+    # Normal BERT Evaluation
+    total_score = 0
+    details = []
 
     for _, row in q_rubric.iterrows():
         emb1 = model.encode(student_ans, convert_to_tensor=True)
         emb2 = model.encode(row['key_point'], convert_to_tensor=True)
         sim = util.pytorch_cos_sim(emb1, emb2).item()
 
-        # HYBRID SCORING LOGIC
         if sim >= 0.45: # Strong match
             total_score += row['marks']
             details.append(f"✅ {row['key_point']} | {row['marks']}/{row['marks']} | Sim: {sim:.2f} - Full Match")
         elif sim >= 0.35: # Partial match
-            partial = max(1, round(row['marks'] * 0.5)) # Min 1 mark
+            partial = max(1, round(row['marks'] * 0.5))
             total_score += partial
             details.append(f"🟡 {row['key_point']} | {partial}/{row['marks']} | Sim: {sim:.2f} - Partial Match")
         else: # No match
@@ -49,7 +63,7 @@ grand_total = 0
 grand_max = 0
 all_scores = []
 
-st.info("Thresholds: >0.45 = Full marks | 0.35-0.45 = Half marks | <0.35 = 0 marks")
+st.info("Logic: >0.45 = Full marks | 0.35-0.45 = Half marks | Opposite concept = 0 marks")
 
 for q_id in sorted(rubrics['question_id'].unique()):
     q_text = rubrics[rubrics['question_id']==q_id]['question'].iloc[0]
