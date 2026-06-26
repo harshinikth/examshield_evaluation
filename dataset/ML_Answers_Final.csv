@@ -1,0 +1,901 @@
+﻿question,model_answers
+What does ML stand for?,Machine Learning
+Which type of ML uses labeled data?,Supervised
+Which type of ML uses unlabeled data?,Unsupervised
+"In reinforcement learning, the agent learns through:",Rewards and penalties
+What is overfitting?,Model performs well on training but poorly on test data
+What is underfitting?,Model fails to capture patterns
+What is the bias-variance tradeoff?,Reducing bias increases variance and vice versa
+Which metric measures proportion of correct predictions?,Accuracy
+Precision = ?,TP/(TP+FP)
+Recall = ?,TP/(TP+FN)
+F1-Score is:,Harmonic mean of Precision and Recall
+What does AUC-ROC measure?,Model's ability to distinguish classes
+Cross-validation helps in:,Robust model evaluation
+What is k-fold cross-validation?,Data split into k equal parts; each used as validation once
+Purpose of a validation set:,Tune hyperparameters during training
+L1 regularization is:,Lasso
+L2 regularization is:,Ridge
+Dropout in neural networks:,Prevents overfitting
+Feature engineering means:,Creating/transforming features to improve model
+What is a hyperparameter?,Set before training; not learned
+Gradient descent minimizes:,Loss function
+Learning rate controls:,Step size in parameter updates
+Batch gradient descent:,Uses entire dataset per update
+SGD (Stochastic Gradient Descent):,Uses one sample per update
+Mini-batch GD uses:,A subset per update
+Vanishing gradient problem:,Gradients too small to update early layers
+Most common hidden layer activation in deep nets:,ReLU
+Softmax used in output for:,Multiclass classification
+KNN default distance metric:,Euclidean
+'K' in KNN represents:,Number of nearest neighbors
+KNN is an example of:,Lazy learning
+SVM finds:,Optimal hyperplane maximizing margin
+Kernel trick in SVM:,Non-linear classification in transformed space
+Naive Bayes assumes:,Features conditionally independent given class
+Random Forest is ensemble of:,Decision Trees
+Boosting trains models to:,Correct errors of previous models
+XGBoost stands for:,Extreme Gradient Boosting
+Bagging reduces:,Variance
+Confusion matrix summarizes:,Classification performance via TP/FP/TN/FN
+False Positive (FP) is also called:,Type I error
+False Negative (FN) is also called:,Type II error
+Best metric for imbalanced datasets:,F1-Score or AUC-ROC
+Data normalization:,Scales features to same range
+Min-Max scaling range:,"[0, 1]"
+Z-score standardization produces:,"Mean 0, std 1"
+Isolation Forest is used for:,Anomaly detection
+Transfer learning:,Reuses pre-trained model for new tasks
+Dimensionality reduction:,Reduces features while retaining info
+PCA is a ___ dimensionality reduction technique:,Linear
+PCA = ?,Principal Component Analysis
+t-SNE is primarily for:,Data visualization in 2D/3D
+GAN consists of:,Generator and Discriminator
+Generator's goal in GAN:,Fool the discriminator
+Elbow Method is used for:,Optimal number of clusters
+Silhouette score evaluates:,Cluster quality
+DBSCAN doesn't require specifying:,Number of clusters
+K-Means assigns clusters by:,Distance to centroids
+Hierarchical clustering produces:,A dendrogram
+Association rule mining finds:,Co-occurring items in transactions
+Apriori mines:,Frequent itemsets
+Support in association rules:,Frequency of itemset in dataset
+Confidence in association rules:,P(B|A)
+Lift > 1 indicates:,Positive correlation between items
+MSE is used for:,Regression evaluation
+RÂ² = 1 means:,Perfect fit
+Negative RÂ² means:,Model worse than horizontal baseline
+MAE = ?,Mean Absolute Error
+RMSE penalizes:,Large errors more than MAE
+Learning curve shows:,Model performance vs training data size
+Grid search:,Finds best hyperparameter combination exhaustively
+Random search is better than grid search when:,Search space is very large
+Bayesian optimization uses:,Prior knowledge + likelihood
+Feature importance in Random Forest:,Mean decrease in impurity
+Logistic Regression output:,Probability between 0 and 1
+Sigmoid function maps to:,"(0, 1)"
+One-hot encoding:,Encodes categorical variables as binary vectors
+Label encoding:,Assigns integers to categories
+Data leakage:,Test set info leaks into training
+Stratified sampling:,Preserves class distribution in samples
+Time series should be split:,"By time order, not randomly"
+No Free Lunch theorem:,No single algorithm best for all problems
+Occam's Razor in ML:,Prefer simpler models if they explain data well
+Most interpretable algorithm:,Decision Tree
+Early stopping:,Stops training when validation loss increases
+Most popular traditional ML library in Python:,scikit-learn
+fit() in scikit-learn:,Trains the model on data
+predict() in scikit-learn:,Generates predictions on new data
+score() in scikit-learn returns:,Accuracy (classifiers) or RÂ² (regressors)
+What is the purpose of scikit-learn's Pipeline?,Chains preprocessing and model steps
+A model with low training error but high test error is:,Overfitting
+A model with high training AND test error is:,Underfitting
+Which of these is a distance-based algorithm?,KNN
+Which algorithm works best with high-dimensional sparse data?,Naive Bayes
+What is the curse of dimensionality?,"As dimensions increase, data becomes sparse and distances less meaningful"
+Ensemble methods combine models to:,Reduce bias AND variance compared to any single model
+What does 'fit' mean in the context of a scikit-learn transformer?,Learns transformation parameters from training data
+Python is:,"High-level, interpreted, general-purpose language"
+Python's data type for ordered mutable collection:,list
+Python's data type for ordered immutable collection:,tuple
+Python's data type for unordered unique elements:,set
+Python dictionary is:,Unordered key-value pairs (ordered insertion in Python 3.7+)
+Output of type(42):,<class 'int'>
+Output of type(3.14):,<class 'float'>
+What is list comprehension?,Creates list using concise one-line expression
+"Output of len([1,2,3,4]):",4
+Keyword to define a function:,def
+*args allows:,Variable number of positional arguments
+**kwargs allows:,Variable number of keyword arguments
+Lambda function is:,Anonymous single-expression function
+map() does:,Applies function to each item in iterable
+filter() does:,Returns elements where function returns True
+Generator in Python:,Function that yields values one at a time
+List vs Tuple key difference:,"Lists mutable, tuples immutable"
+'with' statement:,"Manages context (e.g., file handling)"
+Decorator in Python:,Function that modifies another function
+GIL (Global Interpreter Lock):,Allows only one thread to run Python bytecode at a time
+'pass' in Python:,Does nothing; placeholder
+"Output of range(2,10,3):","range producing [2,5,8]"
+Module for regular expressions:,re
+os.path.join() does:,Safely joins file path components
+pickle module does:,Serializes/deserializes Python objects
+Virtual environment in Python:,Isolated Python environment with its own packages
+__init__.py makes:,Directory into a Python package
+'self' in a class:,Current instance of the class
+__str__ method:,User-friendly string representation of object
+Method overriding:,Subclass redefines parent class method
+Multiple inheritance:,Class inherits from more than one parent
+MRO (Method Resolution Order):,Order Python looks up methods in inheritance hierarchy
+super() does:,Calls parent class method
+Property in Python:,Manages attribute access via getter/setter methods
+@staticmethod vs @classmethod:,staticmethod: no class/instance access; classmethod: gets class as first arg
+Python garbage collection:,Reference counting + cyclic GC
+itertools module:,Efficient iterators for looping
+collections module:,Specialized container datatypes
+namedtuple:,Immutable sequence with named fields
+defaultdict:,Dict providing default values for missing keys
+Counter in collections:,Counts occurrences of hashable items
+json.dumps():,Converts Python object to JSON string
+json.loads():,Parses JSON string to Python object
+== vs 'is' in Python:,== checks value; 'is' checks identity
+Shallow copy vs deep copy:,Shallow copies reference; deep copies all nested objects
+from module import function:,Imports specific function from module
+Output of 2**10:,1024
+zip() does:,Combines two iterables element-wise
+enumerate() does:,Adds index to iterable elements
+append() vs extend():,append adds one item; extend adds multiple items
+sorted() returns:,New sorted list
+List slicing:,Extracts sub-list using indices
+frozenset is:,Immutable version of set
+Empty containers are:,Falsy in Python
+assert does:,Tests condition; raises AssertionError if False
+finally in try-except:,Runs regardless of exception
+Context manager:,Object with __enter__ and __exit__ for resource management
+any() does:,Returns True if any element is truthy
+all() does:,Returns True only if all elements truthy
+__len__ method:,Returns length of an object
+@property decorator:,Accesses method like an attribute
+Duck typing:,"If it behaves like a type, treat it as that type"
+__slots__ in Python:,Restricts instance attributes to save memory
+asyncio is for:,Writing async (non-blocking) I/O code
+yield in a generator:,Pauses execution and returns value to caller
+@classmethod receives:,cls as first argument (the class itself)
+Monkey patching:,Dynamically modifying class/module at runtime
+__call__ enables:,Calling object like a function
+Memoization:,Caching expensive function results
+@functools.lru_cache:,Memoization decorator
+async/await is used for:,Asynchronous coroutines
+__getitem__ enables:,Indexing with []
+Type hinting:,Annotating variables/functions with expected types
+dataclass decorator:,"Auto-generates __init__, __repr__, __eq__ etc."
+Threads vs processes in Python:,Threads share memory; processes have separate memory
+multiprocessing bypasses GIL because:,Each process has its own Python interpreter
+__hash__ controls:,Whether object can be used as dict key or set element
+functools.partial:,Pre-fills some arguments of a function creating new function
+Walrus operator (:=):,Assigns value within an expression
+f-string example:,f'Hello {name}'
+str.split() returns:,A list of substrings
+NumPy primary use:,Numerical computing with multi-dimensional arrays
+pandas primary use:,Data manipulation and analysis with DataFrames
+matplotlib primary use:,Data visualization
+pd.read_csv():,Reads CSV file into a DataFrame
+df.head():,Shows first 5 rows of DataFrame
+df.dropna():,Removes rows with missing values
+df.fillna(value):,Fills missing values with specified value
+Vectorized NumPy operation:,Applied element-wise without explicit loops
+np.array vs list:,np.array supports vectorized math; list is general-purpose
+How to install packages in Python:,pip install package_name
+What is pip?,Package installer for Python
+What is a Python module?,A .py file containing reusable code
+What is a Python package?,A directory of modules with __init__.py
+str() function:,Converts object to string
+int() function:,Converts to integer
+What is the output of bool(0)?,FALSE
+What is the output of bool([]):,FALSE
+in operator with sets is O(?):,O(1) average
+"In Python 3, / operator does:",True division (returns float)
+// operator in Python:,Floor division
+% operator in Python:,Modulo (remainder)
+What is a neural network?,Layers of interconnected neurons that learn representations
+What is the hidden layer?,Layer between input and output learning representations
+What is backpropagation?,Algorithm computing gradients via chain rule
+What is an epoch?,One complete pass through the training dataset
+Purpose of activation functions:,Introduce non-linearity
+Vanishing gradient problem:,Gradients too small in early layers
+Exploding gradient problem:,Gradients become very large causing unstable updates
+Gradient clipping:,Limits gradient magnitude to prevent exploding gradients
+ReLU: f(x) = ?,"max(0, x)"
+Leaky ReLU:,ReLU with small slope for negative inputs
+Sigmoid range:,"(0, 1)"
+Tanh range:,"(-1, 1)"
+Why Sigmoid not preferred in hidden layers:,Causes vanishing gradients
+Batch Normalization:,Normalizes activations within a batch to stabilize training
+Layer Normalization:,Normalizes across features for one sample (Transformers)
+CNN is:,Network using convolutional layers to extract spatial features
+Convolutional layer:,Applies filters to detect local patterns
+Pooling layer:,Reduces spatial dimensions (downsampling)
+Max Pooling:,Takes maximum value in pooling window
+Stride in convolution:,Number of pixels filter moves per step
+Padding in CNN:,Adding zeros to control output spatial size
+RNN:,Network with loops to process sequential data
+Vanishing gradient in RNNs:,Gradients decay through many time steps
+LSTM:,RNN variant with gates to control long-range information
+LSTM gates:,"Input, Forget, and Output gates"
+GRU vs LSTM:,GRU has fewer gates (reset and update) â€” simpler
+Autoencoder:,Compresses input to lower-dimensional representation and reconstructs
+Autoencoder bottleneck:,Compressed lower-dimensional representation
+VAE (Variational Autoencoder):,Generative model with probabilistic latent space
+GAN (Generative Adversarial Network):,Generator creates fakes; Discriminator distinguishes real/fake
+Mode collapse in GANs:,Generator produces only a few output types
+Transformer model:,Attention-based architecture processing tokens in parallel
+Self-attention:,Each token attends to all other tokens
+BERT:,Bidirectional Encoder Representations from Transformers
+GPT:,Generative Pre-trained Transformer for text generation
+Fine-tuning:,Adapting pre-trained model to specific task
+Xavier/Glorot init:,For Sigmoid/Tanh â€” keeps activation variance stable
+He init:,For ReLU activations â€” keeps variance stable
+ResNet's key innovation:,Residual (skip) connections enabling very deep networks
+Skip connections:,Add input to layer output to prevent vanishing gradients
+Softmax output layer:,Converts logits to probability distribution over classes
+Dense (fully connected) layer:,Every neuron connected to every previous neuron
+Embedding layer:,Maps discrete tokens to dense continuous vectors
+Positional encoding in Transformers:,Adds position info since attention is permutation-invariant
+Multi-head attention:,Parallel attention heads with different projections
+Seq2Seq model:,Encoder encodes input; Decoder generates output
+Beam search:,Keeps top-k sequences at each generation step
+Object detection vs classification:,Detection localizes + classifies multiple objects
+Semantic segmentation:,Labels every pixel with a class
+Instance segmentation:,Detects and segments each instance separately
+Siamese network:,Twin networks comparing inputs for similarity
+Attention mechanism advantage:,Models dependencies regardless of distance
+ResNet-50 has approximately:,50 layers
+What is depthwise separable convolution?,Splits into depthwise + pointwise steps for efficiency
+Dilated (atrous) convolution:,Gaps in kernel to increase receptive field
+Transposed convolution:,"Upsamples feature maps (used in decoders, GANs)"
+U-Net architecture:,Encoder-decoder with skip connections for segmentation
+Word2Vec:,Learns word embeddings from co-occurrence contexts
+CBOW vs Skip-gram:,CBOW predicts word from context; Skip-gram predicts context from word
+GloVe:,Word embeddings from global word co-occurrence statistics
+FastText vs Word2Vec:,FastText uses subword (character n-gram) information
+BLEU score:,Measures machine translation quality vs reference
+What is a language model's perplexity?,Measures how well model predicts sequences (lower = better)
+Reinforcement learning from human feedback (RLHF):,Fine-tuning LLMs using human preference judgments
+What is dropout rate of 0.5?,50% of neurons randomly deactivated during training
+Batch size effect: smaller batch â†’ ?,Noisier gradient updates; can escape local minima
+Learning rate too high â†’ ?,Model diverges; loss increases or oscillates
+Learning rate too low â†’ ?,Very slow convergence; may get stuck in local minima
+Adam optimizer combines:,Momentum + RMSprop (adaptive learning rates + momentum)
+What is momentum in optimization?,Accumulates past gradients to accelerate relevant directions
+RMSprop adapts:,Learning rate based on moving average of squared gradients
+What is weight decay?,L2 regularization added to optimizer
+What is label smoothing?,Replaces hard 0/1 targets with soft values to reduce overconfidence
+What is CutMix augmentation?,Mixes patches from two images with corresponding label blending
+What is Mixup augmentation?,Linear interpolation between two training examples
+What is knowledge distillation?,Training smaller student using larger teacher's outputs
+Model pruning:,Removing less important weights to compress model
+Model quantization:,Reducing weight precision (float32 â†’ int8) for efficiency
+What is a 1Ã—1 convolution?,Convolves across channels; used for channel reduction
+Global Average Pooling (GAP):,Averages entire feature map to one value per channel
+What is the receptive field in CNNs?,Region in input space that influences a particular output neuron
+What is a hypercolumn in CNNs?,Concatenation of feature maps at different layers for a pixel
+What is attention pooling?,Weighted aggregation of feature vectors using attention scores
+What is ViT (Vision Transformer)?,Applies Transformer to image patches directly
+What is a prompt in LLMs?,Input text guiding the model's response generation
+What is in-context learning?,LLM learns task from examples in the prompt without fine-tuning
+What is chain-of-thought prompting?,Asking model to show step-by-step reasoning
+What is RAG (Retrieval-Augmented Generation)?,Augmenting LLM with retrieved relevant documents at inference
+What is a hallucination in LLMs?,Model generates confident but factually incorrect information
+EfficientNet scales:,"Width, depth, and resolution uniformly"
+What is a Swin Transformer?,Transformer with shifted windows for efficient image processing
+What is CLIP?,Model learning visual-semantic embeddings from image-text pairs
+What is DALL-E?,Diffusion/transformer model generating images from text descriptions
+Diffusion models generate images by:,Iteratively denoising a random noise image
+What is cross-entropy loss for binary classification?,âˆ’[y log(p) + (1âˆ’y) log(1âˆ’p)]
+Linear Regression models:,Relationship between input and continuous output as linear function
+Logistic Regression is used for:,Classification (binary or multiclass)
+Decision Tree splits on:,Feature that maximizes information gain or minimizes Gini impurity
+Gini impurity measures:,Probability of misclassification in a node
+Entropy in decision trees measures:,Disorder/impurity of a node
+Information Gain = ?,Entropy(parent) âˆ’ weighted average entropy(children)
+Random Forest is:,Ensemble of decision trees trained on bootstrapped samples
+Number of trees in Random Forest:,"Hyperparameter (more = more stable, diminishing returns)"
+Gradient Boosting trains trees:,"Sequentially, each correcting residuals of previous"
+AdaBoost weights:,Misclassified samples get higher weights
+XGBoost improvement over vanilla GBM:,"Regularization, parallel processing, missing value handling"
+LightGBM's main advantage:,Faster training via leaf-wise tree growth on large datasets
+CatBoost's specialty:,Native handling of categorical features without preprocessing
+SVM's decision function:,Sign of wÂ·x + b
+Hard margin SVM:,Requires data to be linearly separable with no violations
+Soft margin SVM:,Allows some misclassification with penalty parameter C
+Larger C in SVM:,Less tolerance for misclassification (narrower margin)
+RBF kernel in SVM:,Maps to infinite-dimensional feature space; good for non-linear data
+KNN algorithm steps:,"Calculate distances, find K nearest, take majority vote"
+KNN for regression:,Average of K nearest neighbors' values
+Naive Bayes types:,"Gaussian, Multinomial, Bernoulli"
+Gaussian Naive Bayes assumes:,Features follow Gaussian distribution
+Multinomial Naive Bayes is used for:,Text classification (word counts/frequencies)
+Linear Discriminant Analysis (LDA):,Supervised dimensionality reduction maximizing class separability
+Quadratic Discriminant Analysis (QDA) vs LDA:,QDA allows class-specific covariance matrices
+Nearest Centroid classifier:,Assigns class of nearest centroid
+Perceptron model:,Binary classifier using linear decision boundary + threshold
+Multi-layer Perceptron (MLP):,Fully connected neural network with multiple hidden layers
+Linear SVM vs Logistic Regression:,SVM maximizes margin; LR maximizes likelihood
+What is Elastic Net regression?,Combines L1 (Lasso) and L2 (Ridge) penalties
+Ridge Regression prevents:,Overfitting by shrinking large coefficients (not to zero)
+Lasso Regression:,Can set coefficients exactly to zero (feature selection)
+Principal Component Regression (PCR):,Performs regression on PCA components
+Partial Least Squares (PLS):,Finds components that maximize covariance with both X and Y
+Gaussian Process regression:,Non-parametric Bayesian model providing predictions with uncertainty
+Bayesian Ridge Regression:,Places prior on coefficients; fully Bayesian regularization
+Isotonic Regression:,Fits non-decreasing (monotone) piecewise constant function
+Huber loss function:,"Less sensitive to outliers than MSE; quadratic for small, linear for large errors"
+Hinge loss is used in:,SVM classification
+Focal loss addresses:,Class imbalance in object detection by down-weighting easy examples
+Triplet loss is used in:,Metric learning / face recognition
+Contrastive loss:,"Minimizes distance for similar pairs, maximizes for dissimilar"
+What is a mixture of experts (MoE)?,Ensemble where a gating network selects which expert(s) process input
+What is a random subspace method?,Random selection of feature subsets for each base learner
+What is Extra Trees (Extremely Randomized Trees)?,Like Random Forest but uses random splits (not optimal)
+What is a voting classifier?,Combines predictions by majority vote or average probabilities
+Hard voting in ensemble:,Majority class label from classifiers
+Soft voting in ensemble:,Average class probabilities across classifiers
+What is One-vs-Rest (OvR) strategy?,Binary classifier trained for each class vs all others
+What is One-vs-One (OvO)?,Binary classifier for each pair of classes
+Calibrated classifier in scikit-learn:,Produces well-calibrated probability outputs
+What is Platt scaling?,Logistic regression on top of SVM scores for calibration
+Linear regression assumptions include:,"Linearity, normality of residuals, homoscedasticity, independence"
+Homoscedasticity means:,Constant variance of residuals across all levels of predictors
+Heteroscedasticity:,Non-constant variance of residuals
+What is the coefficient of determination?,RÂ² â€” proportion of variance explained by the model
+Adjusted RÂ²:,RÂ² penalized for number of predictors (better for multiple regression)
+VIF (Variance Inflation Factor) measures:,Multicollinearity between predictor variables
+Multicollinearity problem:,Correlated predictors make individual coefficients unstable
+What is interaction term in regression?,Product of two features capturing their combined effect
+Polynomial regression:,Linear regression with polynomial features added
+What is the bias term in linear regression?,Intercept (Î²â‚€) â€” value when all features are zero
+What is ordinary least squares (OLS)?,Minimizes sum of squared residuals to fit linear model
+What is maximum likelihood estimation (MLE)?,Finds parameters maximizing probability of observed data
+MAP estimation vs MLE:,MAP incorporates a prior distribution over parameters
+Expectation-Maximization (EM) algorithm:,Iteratively estimates parameters with latent variables
+Gaussian Mixture Model (GMM):,Probabilistic model assuming data from mixture of Gaussians
+What is Hidden Markov Model (HMM)?,Probabilistic model for sequential data with hidden states
+What is Conditional Random Field (CRF)?,Discriminative sequence labeling model used in NLP
+What is the Viterbi algorithm?,Dynamic programming for finding most probable state sequence in HMM
+Random Forest feature importance method:,Mean decrease in impurity or permutation importance
+What is out-of-bag (OOB) evaluation in Random Forest?,Using samples not in bootstrap sample to evaluate each tree
+What are support vectors in SVM?,Training points closest to the decision boundary
+What is the margin in SVM?,Distance between decision boundary and nearest support vectors
+AdaBoost final prediction:,Weighted majority vote of weak classifiers
+"In gradient boosting, learning rate shrinks:",Contribution of each tree to reduce overfitting
+XGBoost regularization terms:,L1 (Î±) and L2 (Î») on leaf weights + minimum loss reduction (Î³)
+What is feature bagging in Random Forest?,Each split considers random subset of features (âˆšn features)
+What is max_depth in Decision Tree?,Maximum number of levels in the tree
+min_samples_split in Decision Tree:,Minimum samples required to split an internal node
+What is pruning in Decision Trees?,Removing subtrees that don't improve generalization
+Cost Complexity Pruning (ccp_alpha):,Adds complexity penalty; larger alpha = simpler tree
+What is a decision stump?,Decision tree with only one split (depth=1)
+Class weight in classifiers:,Adjusts importance of each class to handle imbalance
+What is SMOTE?,Synthetic Minority Oversampling: creates synthetic minority samples
+What is undersampling?,Removing majority class samples to balance dataset
+Oversampling vs undersampling:,Oversampling adds minority; undersampling removes majority
+What is threshold tuning?,Adjusting classification threshold (default 0.5) to trade off precision/recall
+What is calibration in probabilistic classifiers?,Ensuring predicted probabilities match empirical frequencies
+What is a surrogate model in optimization?,Approximate model used in place of expensive true model
+What is AutoML's role?,"Automates model selection, feature engineering, and hyperparameter tuning"
+What is Neural Architecture Search (NAS)?,Automated discovery of optimal neural network architectures
+What is Artificial Intelligence?,Computer science field creating systems that simulate human intelligence
+AI vs ML vs Deep Learning relationship:,DL âŠ‚ ML âŠ‚ AI (DL is subset of ML which is subset of AI)
+What is the Turing Test?,Test of machine's ability to exhibit intelligent behavior indistinguishable from human
+What is narrow AI?,AI that excels at ONE specific task
+What is General AI (AGI)?,Hypothetical AI with human-level intelligence across all tasks
+What is expert system?,Rule-based AI system encoding domain expert knowledge
+What is a knowledge base?,Repository of facts and rules used by expert systems and AI
+What is the difference between inductive and deductive reasoning?,Inductive: specificâ†’general; Deductive: generalâ†’specific
+What is the Bayes theorem?,P(A|B) = P(B|A)Ã—P(A)/P(B)
+Prior probability in Bayesian inference:,Belief about parameter before observing data
+Posterior probability:,Updated belief after incorporating observed data
+What is the law of large numbers?,"As sample size increases, sample mean converges to true mean"
+What is Central Limit Theorem?,Sum/mean of many independent random variables approximates normal distribution
+What is a p-value?,Probability of observing results at least as extreme assuming null hypothesis is true
+Statistical significance level Î±:,Threshold below which we reject null hypothesis (commonly 0.05)
+Type I error (False Positive) in hypothesis testing:,Rejecting true null hypothesis
+Type II error (False Negative):,Failing to reject false null hypothesis
+Statistical power:,Probability of correctly rejecting a false null hypothesis
+What is effect size?,"Magnitude of difference between groups, independent of sample size"
+A/B test measures:,Difference in outcomes between two variants
+What is correlation?,Statistical measure of linear relationship between two variables
+Pearson correlation ranges:,"[-1, 1]"
+Correlation â‰  causation means:,Two correlated variables don't necessarily have causal relationship
+What is covariance?,Measure of joint variability of two variables
+What is standard deviation?,Square root of variance; measure of spread
+What is a null hypothesis?,Statement of no effect or no difference being tested
+What is statistical inference?,Drawing conclusions about populations from sample data
+What is random variable?,Variable whose value is determined by random process
+Discrete vs continuous random variable:,Discrete: countable values; Continuous: any value in range
+Expected value E[X]:,Weighted average of all possible values
+Variance Var[X]:,E[(X-Î¼)Â²] â€” expected squared deviation from mean
+What is the normal distribution?,Bell-shaped symmetric distribution defined by mean and std dev
+What is the binomial distribution?,Distribution of number of successes in n independent Bernoulli trials
+What is the Poisson distribution?,Distribution of number of events in fixed interval when events are rare
+What is the uniform distribution?,All outcomes equally likely
+What is a confidence interval?,Range likely containing true parameter value at given confidence level
+95% confidence interval means:,"If experiment repeated many times, 95% of CIs would contain true value"
+What is Simpson's paradox?,Trend appears in groups but reverses when groups combined
+What is survivorship bias?,Focusing on survivors/successes while ignoring failures
+What is selection bias in ML?,Training data not representative of deployment population
+What is sampling bias?,Sample not randomly selected leading to unrepresentative data
+What is the curse of dimensionality?,"As dimensions increase, data becomes sparse and distance less meaningful"
+What is feature importance vs feature selection?,Importance ranks features; selection chooses subset to keep
+What is mutual information?,Measures statistical dependence between two variables
+What is entropy in information theory?,Measure of uncertainty or information content
+What is KL divergence?,Measures how one probability distribution differs from another
+What is the law of total probability?,P(B) = Î£ P(B|Aáµ¢)P(Aáµ¢) summed over all Aáµ¢
+What is Occam's Razor?,Simpler explanation preferred over complex when both fit the data
+What is the train-test gap?,Difference between training and test performance (large gap = overfitting)
+What is model complexity?,Capacity of model to fit complex patterns (related to parameters)
+What is capacity in ML?,Model's ability to fit a wide variety of functions
+What is inductive bias?,Assumptions made by algorithm to generalize beyond training data
+What is frequentist vs Bayesian statistics?,Frequentist uses long-run frequencies; Bayesian uses prior beliefs + data
+What is a statistical model?,Mathematical description of data-generating process
+What is the likelihood function?,P(data | parameters) â€” probability of data given parameter values
+What is a sufficient statistic?,Contains all information about parameter that data has
+What is a point estimate?,Single value estimate of population parameter
+What is method of moments estimation?,Equates sample moments to population moments to estimate parameters
+What is leave-one-out cross-validation (LOOCV)?,Each sample used once as test; rest as train
+What is bootstrap aggregating (bagging)?,Training models on bootstrapped samples and aggregating
+What is bootstrapping statistically?,Resampling with replacement from dataset to estimate statistics
+Monte Carlo simulation:,Using random sampling to estimate numerical results
+What is Markov property?,"Future state depends only on current state, not history"
+What is a Markov chain?,Sequence of states where each depends only on previous state
+What is stationarity in time series?,"Statistical properties (mean, variance) constant over time"
+Autocorrelation in time series:,Correlation of a series with its own lagged values
+What is seasonality?,Periodic fluctuations recurring at regular intervals
+What is trend in time series?,Long-term increase or decrease in the data
+ARIMA stands for:,AutoRegressive Integrated Moving Average
+What is the AR component of ARIMA?,Uses past values to predict future values
+What is the MA component of ARIMA?,Uses past forecast errors to improve predictions
+What is the I component of ARIMA?,Number of differencing operations to make series stationary
+What is LSTM's advantage for time series?,Can capture long-range dependencies better than vanilla RNN
+What is a stationary time series?,"Mean, variance, and covariance are constant over time"
+What is augmented Dickey-Fuller test?,Tests for presence of unit root (non-stationarity) in time series
+What is differencing in time series?,Subtracting previous observation to remove trend/make stationary
+What is the Box-Jenkins methodology?,Identify â†’ Estimate â†’ Diagnose ARIMA model steps
+What is cross-spectral analysis?,Analyzing relationship between two time series in frequency domain
+What is forecasting horizon?,Number of future time steps being predicted
+What is multi-step forecasting?,Predicting multiple future time steps
+What is nowcasting?,Predicting present or very near future using current data
+What is anomaly detection?,Identifying data points significantly different from the norm
+What is a statistical process control (SPC)?,Using statistical methods to monitor and control a process
+What is the Bonferroni correction?,Adjusting significance threshold when making multiple comparisons
+What is the chi-square test?,Tests independence between categorical variables
+What is ANOVA?,Analysis of Variance â€” tests mean differences across 3+ groups
+What is t-test?,Tests mean difference between two groups
+What is Mann-Whitney U test?,Non-parametric test comparing two independent groups
+What is Kolmogorov-Smirnov test?,Tests if samples come from same distribution or a specified one
+What is statistical learning theory?,Theoretical framework studying conditions under which learning is possible
+What is PAC learning?,Probably Approximately Correct â€” framework for learnability
+What is VC dimension?,Measure of model complexity â€” maximum number of points it can shatter
+What is structural risk minimization?,Balancing empirical risk and model complexity (VC theory)
+What is data preprocessing?,"Transforming raw data into clean, usable format for ML"
+What is missing value imputation?,Replacing missing values with estimated values
+Mean imputation:,Replace missing values with feature mean
+Median imputation preferred when:,Data has significant outliers
+Mode imputation is for:,Categorical features
+KNN imputation:,Replaces missing with weighted average of K nearest neighbors
+Multiple Imputation:,Creates multiple imputed datasets and combines results for statistical validity
+MCAR (Missing Completely at Random):,Missingness unrelated to observed or unobserved data
+MAR (Missing at Random):,Missingness related to observed but not missing data itself
+MNAR (Missing Not at Random):,Missingness related to the missing value itself
+What is outlier detection?,Identifying data points far from the majority distribution
+IQR method for outliers:,Points below Q1âˆ’1.5Ã—IQR or above Q3+1.5Ã—IQR are outliers
+Z-score method for outliers:,Points with |z-score| > 3 typically considered outliers
+Isolation Forest detects outliers by:,Isolating anomalies by randomly partitioning features
+Local Outlier Factor (LOF):,Compares local density of point to its neighbors
+What is feature scaling?,Transforming numerical features to similar range
+Min-Max normalization formula:,(x âˆ’ min)/(max âˆ’ min)
+Z-score standardization formula:,(x âˆ’ Î¼)/Ïƒ
+MaxAbsScaler:,"Scales each feature by its maximum absolute value to [-1, 1]"
+RobustScaler:,"Uses median and IQR, robust to outliers"
+When to use StandardScaler:,When features are normally distributed and outliers not extreme
+When to use RobustScaler:,When data has significant outliers
+"Tree-based models (RF, XGBoost) require feature scaling?",No â€” they are scale invariant
+What is Label Encoding?,"Assigns integer values (0, 1, 2...) to categories"
+Issue with Label Encoding for nominal categories:,Implies ordinal relationship that doesn't exist
+One-hot encoding creates:,Binary column for each category
+Issue with one-hot encoding for high-cardinality:,Dimensionality explosion
+Target encoding:,Replaces category with mean of target for that category
+Target encoding risk:,Data leakage if done before train-test split
+Frequency encoding:,Replaces category with its frequency (count) in the dataset
+Binary encoding:,Encodes categories as binary (base-2) integers â€” reduces dimensions vs one-hot
+Hashing encoding:,Maps categories to fixed-length binary vector using hash function
+What is Ordinal Encoding?,Encodes ordered categories preserving their relative order
+What is the difference between Ordinal and Label Encoding?,Ordinal preserves meaningful order; Label assigns arbitrary integers
+What is dimensionality reduction in preprocessing?,Reducing number of features while preserving information
+What is feature selection vs extraction?,Selection keeps existing features; extraction creates new ones
+Wrapper methods for feature selection:,"Train model on feature subsets; evaluate performance (e.g., RFE)"
+Filter methods for feature selection:,Use statistical measures independent of any model
+Embedded methods for feature selection:,"Feature selection during model training (e.g., Lasso, tree importance)"
+Recursive Feature Elimination (RFE):,Iteratively removes least important features based on model weights
+What is VIF and why it's used in preprocessing?,Detects multicollinearity; remove features with high VIF (>5 or 10)
+What is PCA in preprocessing context?,Transforms features to uncorrelated principal components
+What is log transformation used for?,Reducing skewness in right-skewed distributions
+Box-Cox transformation:,Power transformation to make distribution more normal
+Yeo-Johnson transformation:,Like Box-Cox but handles zero and negative values
+What is binarization?,Converting numerical features to 0/1 based on threshold
+What is discretization (binning)?,Converting continuous features into categorical intervals
+Equal-width binning:,Divides range into bins of equal width
+Equal-frequency binning (quantile):,Each bin has roughly equal number of samples
+What is feature interaction?,Capturing combined effect of two or more features
+Polynomial features:,Creates interaction terms and higher-degree features
+What is data augmentation?,Creating new training samples by transforming existing ones
+Common image augmentation techniques:,"Flip, rotate, crop, color jitter, zoom"
+Text augmentation techniques:,"Synonym replacement, back translation, random insertion"
+What is tokenization?,"Splitting text into words, subwords, or characters"
+What is stemming?,"Reducing words to base/root form (e.g., runningâ†’run)"
+What is lemmatization?,Reducing words to dictionary base form using morphological analysis
+What are stop words?,"Common words (the, a, is) often removed as they add little meaning"
+TF-IDF:,Term Frequency Ã— Inverse Document Frequency â€” weight for rare important words
+Bag of Words (BoW):,Represents text as word count vector ignoring order
+What is word padding in NLP?,Adding zeros/special tokens to make sequences equal length
+What is truncation in NLP?,Cutting sequences to maximum length
+What is data pipeline?,Automated sequence of data processing steps
+"What is ETL (Extract, Transform, Load)?","Process of extracting data, transforming it, loading to destination"
+What is feature store?,"Centralized system to store, share, and serve ML features"
+What is data versioning?,"Tracking changes to datasets over time (e.g., DVC)"
+What is schema validation?,Checking if data follows expected structure and types
+What is data drift?,Statistical properties of input data change over time in production
+What is covariate shift?,Distribution of input features changes between train and test/prod
+What is label noise?,Incorrectly labeled training examples
+What is data cleaning?,"Correcting errors, removing duplicates, handling missing/outliers"
+What is deduplication?,Identifying and removing duplicate records
+What is type casting in data preprocessing?,"Converting data from one type to another (e.g., string to datetime)"
+What is datetime feature extraction?,"Creating features from datetime (hour, day, month, weekday)"
+Cyclical encoding for time features:,"Using sine and cosine to capture cyclical nature (e.g., hour of day)"
+What is geospatial feature engineering?,"Creating features from lat/lon (distance, clustering, area)"
+What is the Winsorization technique?,Capping extreme values at specified percentiles
+What is data leakage in preprocessing?,Information from future/test leaks into training via preprocessing
+How to prevent leakage in preprocessing?,Fit preprocessing transformers only on training data
+What is the correct order: split then scale OR scale then split?,"Split first, then scale (fit on train only)"
+What is image normalization?,"Dividing pixel values by 255 (or using mean/std) to scale to [0,1] or N(0,1)"
+What is class weight balancing?,Assigning higher loss weight to minority class during training
+What is corpus in NLP?,Large collection of text data used for training/analysis
+What is vocabulary in NLP?,Set of unique tokens in the dataset
+What is OOV (Out-of-Vocabulary) handling?,Representing unknown words with special <UNK> token or subword tokenization
+What is subword tokenization (BPE)?,Breaks rare words into common subword pieces to reduce OOV
+What is sentence embedding?,Fixed-size vector representing entire sentence meaning
+What is data balancing?,Adjusting class distribution to improve model fairness and performance
+What is Stratified K-Fold's role in preprocessing context?,Ensures each fold has same class distribution as full dataset
+What is the purpose of a feature engineering pipeline?,"Automates reproducible, consistent feature transformations for train and test"
+What is PCA whitening?,PCA + scaling each component to unit variance
+What is model training?,Adjusting model parameters to minimize loss function
+What is the training loop?,Iterative process: forward pass â†’ compute loss â†’ backward pass â†’ update weights
+What is the loss function's role?,Measures how wrong model predictions are
+What is gradient?,Vector of partial derivatives of loss w.r.t. each parameter
+What is weight update rule in gradient descent?,w = w âˆ’ lr Ã— gradient
+What is local minimum in optimization?,Point where loss is lower than nearby points but not globally lowest
+What is global minimum?,Point where loss is absolutely lowest across all parameter values
+What is a saddle point?,Point where gradient is zero but is neither min nor max
+Why does gradient descent struggle with saddle points in deep learning?,Loss plateaus make learning very slow even though not converged
+What is learning rate warmup?,Gradually increasing learning rate at start of training for stability
+Cosine annealing LR schedule:,"Decreases LR following cosine curve, possibly with warm restarts"
+Step LR decay:,Reduces LR by factor every N epochs
+Exponential LR decay:,LR reduced by factor Î³ at every epoch: lr = lrâ‚€ Ã— Î³áµ—
+Reduce on Plateau:,Reduces LR when a metric stops improving
+What is cyclic learning rate?,Oscillates between min and max LR to escape local minima
+SGD with momentum update:,v = Î²v + gradient; w = w âˆ’ lr Ã— v
+Momentum Î²=0.9 means:,90% past velocity + 10% current gradient contributes to update
+Nesterov momentum:,Computes gradient at lookahead position (more accurate update)
+RMSprop:,Divides LR by moving average of squared gradients (adapts per parameter)
+Adam optimizer:,Combines momentum (first moment) and RMSprop (second moment)
+Adam hyperparameters:,"lr, Î²â‚ (momentum), Î²â‚‚ (RMSprop term), Îµ (numerical stability)"
+AdaGrad:,Adapts LR per parameter; decreases more for frequently updated
+AdaGrad limitation:,"LR monotonically decreases, eventually becoming too small"
+AdaDelta:,Addresses AdaGrad's diminishing LR using running average of updates
+AMSGrad:,Adam variant ensuring monotonically decreasing effective LR (convergence guarantee)
+What is gradient accumulation?,Accumulating gradients over multiple batches before updating (simulates larger batch)
+What is gradient checkpointing?,Saves memory by recomputing activations during backward pass instead of storing
+Mixed precision training (fp16):,Using float16 for forward/backward; float32 for weight updates â€” speeds up + saves memory
+Automatic Mixed Precision (AMP):,PyTorch/TF tool that automatically handles fp16/fp32 switching safely
+What is distributed training?,Training model across multiple GPUs/machines
+Data parallelism:,Same model on each GPU; different data batches; gradients averaged
+Model parallelism:,Model split across GPUs (for models too large to fit one GPU)
+What is gradient synchronization in distributed training?,Averaging gradients from all workers after each batch
+What is the forward pass?,Input propagated through network to produce prediction
+What is the backward pass?,Computing gradients via backpropagation through the network
+What is weight initialization's importance?,"Poor init can cause vanishing/exploding gradients, slow convergence"
+Random initialization (Gaussian):,Small random values from Gaussian distribution
+Zero initialization problem:,All neurons learn identical features (symmetry breaking fails)
+What is the dead ReLU problem?,Neurons permanently stuck outputting 0 due to negative activation
+How to fix dead ReLU?,"Use Leaky ReLU, PReLU, or ELU; careful weight init"
+What is batch size effect on training?,"Larger batch: stable gradients, less regularization; Smaller: noisier, more regularizing"
+Linear scaling rule for batch size:,"When multiplying batch size by k, multiply learning rate by k"
+What is the loss landscape?,High-dimensional surface of loss values over all parameter combinations
+What is loss curve (training curve)?,Plot of training loss over epochs/iterations
+What does training loss decreasing but validation loss increasing indicate?,Overfitting â€” model memorizing training data
+What is the warm-start technique?,Initializing model with weights from a previous run
+What is curriculum learning?,"Training on easier examples first, gradually increasing difficulty"
+What is self-paced learning?,"Model selects which samples to train on (starts with easy, adds hard)"
+What is hard negative mining?,Selecting difficult negative examples for more effective training
+What is class-balanced sampling?,Drawing equal samples per class per batch during training
+What is weighted random sampling?,Each sample drawn with probability proportional to its weight
+What is gradient norm?,L2 norm of all gradients â€” used in gradient clipping
+Why monitor gradient norms during training?,Detect exploding gradients and training instability
+What is loss masking?,Ignoring loss contribution from padding tokens or irrelevant positions
+What is auxiliary loss?,Additional loss term added to help training of intermediate representations
+What is multi-task learning?,Training one model on multiple related tasks simultaneously
+What is pretraining?,Training model on large general dataset before fine-tuning on task
+What is the difference between pretraining and fine-tuning?,Pretraining on large data; fine-tuning adapts to specific task
+What is feature extraction (frozen layers)?,Using pre-trained model as fixed feature extractor; only train top layers
+What is catastrophic forgetting?,Neural network forgets previously learned tasks when trained on new ones
+Continual learning addresses:,Learning new tasks without forgetting old ones
+What is Elastic Weight Consolidation (EWC)?,Prevents catastrophic forgetting by penalizing changes to important weights
+What is knowledge distillation training?,Student network trained to match teacher network's soft probability outputs
+What is temperature scaling in distillation?,Softens teacher's probability distribution to transfer more information
+What is neural network pruning during training?,Removing unnecessary connections while maintaining performance
+What is lottery ticket hypothesis?,Dense networks contain sparse subnetworks ('winning tickets') that train well alone
+What is progressive resizing in image training?,"Training on small images first, gradually increasing resolution"
+What is test-time augmentation (TTA)?,Averaging predictions over multiple augmented versions of test input
+What is gradient tape in TensorFlow?,Context manager recording operations for automatic differentiation
+What is autograd in PyTorch?,Automatic differentiation engine tracking operations for backprop
+What is the purpose of optimizer.zero_grad() in PyTorch?,Clears accumulated gradients before computing new ones
+What is loss.backward() in PyTorch?,Computes gradients via backpropagation
+What is optimizer.step() in PyTorch?,Updates model parameters using computed gradients
+What is model.train() vs model.eval() in PyTorch?,train(): activates dropout/batch norm; eval(): deactivates them
+What is torch.no_grad() used for?,Disables gradient computation for inference (saves memory)
+What is validation loss used for during training?,Monitor overfitting; guide early stopping; select best model
+What is model checkpointing?,Saving model at best validation performance during training
+What is early stopping criteria?,Validation loss not improving for N consecutive epochs (patience)
+What is the effect of batch normalization on training?,"Stabilizes training, allows higher LR, acts as mild regularizer"
+What is layer freezing in fine-tuning?,Preventing early layers from updating (keep pre-trained features)
+What is discriminative fine-tuning?,Using different learning rates for different layers (lower for early)
+What is cyclical fine-tuning?,Cycle between training different layer groups with varying LR
+What is label smoothing and its effect on training?,Softens hard labels to prevent overconfidence; improves calibration
+What is stochastic depth (DropPath)?,Randomly drops entire residual blocks during training
+What is the effect of weight decay (L2) on trained weights?,"Pulls weights toward zero, preventing large weights"
+What is mini-batch statistics vs population statistics in batch norm?,Training uses mini-batch stats; inference uses running stats
+Linear regression: Å· = ?,Î²â‚€ + Î²â‚xâ‚ + Î²â‚‚xâ‚‚ + ... + Î²â‚™xâ‚™
+Mean Squared Error (MSE) = ?,(1/n)Î£(yáµ¢ âˆ’ Å·áµ¢)Â²
+Root Mean Squared Error (RMSE) = ?,âˆšMSE
+Mean Absolute Error (MAE) = ?,(1/n)Î£|yáµ¢ âˆ’ Å·áµ¢|
+RÂ² (Coefficient of Determination) = ?,1 âˆ’ SS_res/SS_tot
+SS_tot = ?,Î£(yáµ¢ âˆ’ È³)Â²
+SS_res = ?,Î£(yáµ¢ âˆ’ Å·áµ¢)Â²
+Accuracy = ?,(TP + TN)/(TP + TN + FP + FN)
+Precision = ?,TP/(TP + FP)
+Recall (Sensitivity) = ?,TP/(TP + FN)
+Specificity = ?,TN/(TN + FP)
+F1-Score = ?,2 Ã— (Precision Ã— Recall)/(Precision + Recall)
+F-beta Score = ?,(1 + Î²Â²) Ã— (P Ã— R)/(Î²Â²P + R)
+Sigmoid function Ïƒ(x) = ?,1/(1 + e^âˆ’x)
+Softmax: P(class k) = ?,e^zâ‚– / Î£â±¼ e^zâ±¼
+ReLU: f(x) = ?,"max(0, x)"
+Tanh: f(x) = ?,(e^x âˆ’ e^âˆ’x)/(e^x + e^âˆ’x)
+Leaky ReLU: f(x) = ?,"max(Î±x, x) where Î± is small positive"
+ELU: f(x) = ?,"x if x>0, else Î±(e^x âˆ’ 1)"
+Cross-entropy loss (binary) = ?,âˆ’[y log(p) + (1âˆ’y) log(1âˆ’p)]
+Cross-entropy loss (multiclass) = ?,âˆ’Î£â‚– yâ‚– log(pâ‚–)
+Gradient descent update rule: w = ?,w âˆ’ Î·âˆ‡L(w)
+L1 regularization penalty = ?,Î»Î£|wáµ¢|
+L2 regularization penalty = ?,Î»Î£wáµ¢Â²
+Elastic Net = ?,Î±Î»Î£|wáµ¢| + (1âˆ’Î±)Î»Î£wáµ¢Â²
+KNN distance (Euclidean) = ?,âˆšÎ£(xáµ¢ âˆ’ yáµ¢)Â²
+Manhattan distance = ?,Î£|xáµ¢ âˆ’ yáµ¢|
+Cosine similarity = ?,(AÂ·B)/(|A||B|)
+Naive Bayes: P(y|x) âˆ ?,P(y) Ã— Î P(xáµ¢|y)
+Bayes theorem: P(A|B) = ?,P(B|A)P(A)/P(B)
+Entropy: H(X) = ?,âˆ’Î£ p(x) logâ‚‚ p(x)
+Information Gain = ?,Entropy(parent) âˆ’ weighted Entropy(children)
+Gini impurity = ?,1 âˆ’ Î£ páµ¢Â²
+KL Divergence: D_KL(P||Q) = ?,Î£ P(x) log(P(x)/Q(x))
+Jensen-Shannon Divergence = ?,(1/2)[D_KL(P||M) + D_KL(Q||M)] where M=(P+Q)/2
+Pearson correlation: r = ?,Î£(xáµ¢âˆ’xÌ„)(yáµ¢âˆ’È³)/[âˆšÎ£(xáµ¢âˆ’xÌ„)Â²âˆšÎ£(yáµ¢âˆ’È³)Â²]
+"Covariance: Cov(X,Y) = ?",E[(Xâˆ’Î¼â‚“)(Yâˆ’Î¼áµ§)]
+Variance: Var(X) = ?,E[(Xâˆ’Î¼)Â²]
+Standard deviation = ?,âˆšVar(X)
+Bias of an estimator = ?,E[Î¸Ì‚] âˆ’ Î¸ (expected estimate minus true value)
+MSE of estimator = BiasÂ² + ?,Variance
+Z-score standardization: z = ?,(x âˆ’ Î¼)/Ïƒ
+Min-Max normalization: x' = ?,(x âˆ’ min)/(max âˆ’ min)
+Silhouette score: s(i) = ?,"(b(i) âˆ’ a(i))/max(a(i), b(i))"
+Adjusted Rand Index (ARI) = ?,(RI âˆ’ Expected_RI)/(max_RI âˆ’ Expected_RI)
+Support in association rules = ?,count(AâˆªB)/N
+Confidence in association rules = ?,count(AâˆªB)/count(A)
+Lift = ?,Support(AâˆªB)/(Support(A)Ã—Support(B))
+AUC (Area Under ROC) ideal value:,1.0 (perfect; random = 0.5)
+"ROC curve axes: X=?, Y=?","X=FPR (1-Specificity), Y=TPR (Recall/Sensitivity)"
+FPR = ?,FP/(FP + TN)
+Precision-Recall AUC is better than ROC AUC when:,Dataset is heavily imbalanced
+Log loss = ?,âˆ’(1/n)Î£[yáµ¢ log(Å·áµ¢) + (1âˆ’yáµ¢)log(1âˆ’Å·áµ¢)]
+Huber loss (Î´): for |yâˆ’Å·| â‰¤ Î´ = ?,0.5(yâˆ’Å·)Â²
+Huber loss: for |yâˆ’Å·| > Î´ = ?,Î´|yâˆ’Å·| âˆ’ 0.5Î´Â²
+Hinge loss = ?,"max(0, 1 âˆ’ yÃ—Å·)"
+Triplet loss = ?,"max(0, d(a,p) âˆ’ d(a,n) + margin)"
+Contrastive loss = ?,"yÃ—dÂ² + (1âˆ’y)Ã—max(0, mâˆ’d)Â²"
+Focal loss = ?,âˆ’Î±(1âˆ’pâ‚œ)^Î³ log(pâ‚œ)
+Dice coefficient = ?,2|Aâˆ©B|/(|A|+|B|)
+IoU (Intersection over Union) = ?,Area of Overlap / Area of Union
+MAP (Mean Average Precision) in detection = ?,Mean of AP across all classes
+OLS solution: Î² = ?,(Xáµ€X)â»Â¹Xáµ€y
+Ridge regression solution: Î² = ?,(Xáµ€X + Î»I)â»Â¹Xáµ€y
+Logistic regression: P(y=1|x) = ?,1/(1 + e^âˆ’(wáµ€x+b))
+SVM margin = ?,2/||w||
+SVM optimization: minimize ?,(1/2)||w||Â²
+PCA: eigenvalue decomposition of ?,Covariance matrix Xáµ€X/n
+Variance explained by PC k = ?,Î»â‚–/Î£Î»â±¼ (ratio of k-th eigenvalue to sum)
+K-Means objective: minimize ?,Î£áµ¢ Î£â‚“âˆˆCáµ¢ ||x âˆ’ Î¼áµ¢||Â²
+EM algorithm: E-step computes ?,Expected complete-data log likelihood Q(Î¸|Î¸_old)
+ELBO (Evidence Lower BOund) = ?,"E[log p(x,z)] âˆ’ E[log q(z)] (used in VAE)"
+VAE reparameterization: z = ?,"Î¼ + ÏƒÃ—Îµ where Îµ~N(0,I)"
+GAN min-max: min_G max_D ?,E[log D(x)] + E[log(1âˆ’D(G(z)))]
+"Attention: Attention(Q,K,V) = ?",softmax(QKáµ€/âˆšd_k)V
+Scaled dot-product attention scaling by ?,âˆšd_k (square root of key dimension)
+BLEU score n-gram precision = ?,clipped count of matching n-grams / total n-grams in hypothesis
+Perplexity = ?,"2^H(p) where H is cross-entropy, or e^(avg loss) for neural LMs"
+Expected Calibration Error (ECE) = ?,Weighted average of |accuracy âˆ’ confidence| across bins
+F1 harmonic mean formula: 2PR/(P+R) vs arithmetic mean (P+R)/2: which is more conservative?,Harmonic mean (F1) â€” punishes large gaps between P and R more
+Macro-averaging F1:,Compute F1 per class then average â€” treats all classes equally
+Weighted-averaging F1:,"Compute F1 per class, weight by number of true instances (support)"
+Cohen's Kappa = ?,(Accuracy âˆ’ Expected_Accuracy)/(1 âˆ’ Expected_Accuracy)
+Matthews Correlation Coefficient (MCC) = ?,(TPÃ—TNâˆ’FPÃ—FN)/âˆš[(TP+FP)(TP+FN)(TN+FP)(TN+FN)]
+Gradient of MSE loss w.r.t. Å· = ?,2(Å· âˆ’ y)/n
+Gradient of cross-entropy loss w.r.t. logits (after softmax) = ?,Å· âˆ’ y (softmax output minus one-hot label)
+Chain rule for backprop: âˆ‚L/âˆ‚w = ?,(âˆ‚L/âˆ‚a) Ã— (âˆ‚a/âˆ‚z) Ã— (âˆ‚z/âˆ‚w)
+"Xavier initialization variance for layer with n_in, n_out:",2/(n_in + n_out)
+He initialization variance:,2/n_in
+Batch normalization: x_norm = ?,(x âˆ’ Î¼_B)/âˆš(Ïƒ_BÂ² + Îµ)
+"After BN normalization, output y = ?",Î³ Ã— x_norm + Î² (learnable scale Î³ and shift Î²)
+Adam update: m = Î²m + (1âˆ’Î²)g; v = Î²â‚‚v + (1âˆ’Î²â‚‚)gÂ². Weight update = ?,w âˆ’ lr Ã— mÌ‚/âˆš(vÌ‚ + Îµ)
+Number of parameters in fully connected layer (n_inâ†’n_out):,n_in Ã— n_out + n_out (weights + biases)
+"Convolutional layer parameters: kernel kÃ—k, in_channels C_in, out_channels C_out:",k Ã— k Ã— C_in Ã— C_out + C_out
+"Output size of convolution: (W âˆ’ F + 2P)/S + 1 where W=input, F=filter, P=padding, S=stride:",Correct formula
+Total variation (TV) loss used for:,Image smoothness regularization in style transfer / super-resolution
+What is the Bayes theorem in ML?,P(A|B) = P(B|A)*P(A)/P(B) â€” basis for Naive Bayes classifier
+What is a Naive Bayes classifier?,Probabilistic classifier assuming feature independence given class label
+What is the k-nearest neighbors algorithm?,Classifies by majority vote of k nearest training examples
+What is the curse of dimensionality?,Distance metrics become less meaningful in very high dimensional spaces
+What is a decision tree?,Tree structure where each node is a feature split and leaves are predictions
+What is information gain in decision trees?,Reduction in entropy after splitting on a feature
+What is Gini impurity?,Probability of misclassifying a randomly chosen element: 1 - sum(p_i^2)
+What is entropy in decision trees?,Measure of impurity/disorder: -sum(p_i * log2(p_i))
+What is pruning in decision trees?,Removing branches that provide little predictive power to reduce overfitting
+What is Random Forest?,Ensemble of decision trees trained on bootstrap samples with feature randomness
+What is feature importance in Random Forest?,Average reduction in impurity across all trees for each feature
+What is out-of-bag (OOB) error?,Error estimated on samples not used in training each tree (free validation)
+What is Gradient Boosting?,Sequentially builds trees to correct residual errors of previous trees
+What is XGBoost?,"Extreme Gradient Boosting with regularization, parallel processing, and efficiency"
+What is LightGBM?,Gradient boosting using leaf-wise tree growth and histogram-based splits
+What is CatBoost?,Gradient boosting with native categorical feature handling
+What is AdaBoost?,Boosting algorithm assigning higher weights to misclassified examples
+What is support vector machine (SVM)?,Finds optimal hyperplane maximizing margin between classes
+What is the kernel trick in SVM?,Maps features to higher dimension implicitly via kernel function
+What are common kernels in SVM?,"Linear, RBF (Gaussian), Polynomial, Sigmoid"
+What is the C parameter in SVM?,Regularization: low C=wider margin+more violations; high C=narrow margin+fewer violations
+What is the gamma parameter in RBF kernel?,Controls influence range of training examples â€” high gamma=small influence
+What is logistic regression?,Linear model for binary classification using sigmoid function
+What is softmax function?,Generalizes sigmoid to multi-class: converts logits to probability distribution
+What is cross-entropy loss for classification?,Measures difference between predicted probability distribution and true labels
+What is the KL divergence?,Measures how one probability distribution differs from another
+What is mutual information?,Measures statistical dependence between two variables for feature selection
+What is the chi-squared test for features?,Tests independence between categorical feature and target label
+What is ANOVA F-test for features?,Tests if feature means differ across class labels for feature selection
+What is recursive feature elimination (RFE)?,Recursively removes least important features until target count reached
+What is the Lasso for feature selection?,L1 regularization drives unimportant feature coefficients to zero
+What is ElasticNet?,Combines L1 and L2 regularization for feature selection and weight reduction
+What is clustering?,Grouping similar data points without labels (unsupervised learning)
+What is k-means clustering?,"Assigns points to k centroids, updates centroids iteratively until convergence"
+What is the elbow method for k-means?,Plot inertia vs k â€” choose k where improvement slows significantly
+What is the silhouette score?,Measures how similar a point is to its cluster vs nearest cluster
+What is DBSCAN?,Density-based clustering finding arbitrary-shaped clusters and outliers
+What is hierarchical clustering?,Creates cluster tree (dendrogram) by merging or splitting clusters
+What is the linkage criterion in hierarchical clustering?,"How distance between clusters is measured: single, complete, average, Ward"
+What is Gaussian Mixture Model (GMM)?,Probabilistic model assuming data is mixture of Gaussian distributions
+What is the EM algorithm?,Expectation-Maximization for learning parameters of latent variable models
+What is anomaly detection?,Identifying rare or unusual patterns that deviate from normal behavior
+What is Isolation Forest?,Anomaly detection isolating outliers using random feature splits
+What is Local Outlier Factor (LOF)?,Anomaly detection comparing local density of point to its neighbors
+What is one-class SVM?,Learns boundary around normal data for anomaly detection
+What is auto-encoder for anomaly detection?,Learns to reconstruct normal data â€” high reconstruction error = anomaly
+What is time series forecasting?,Predicting future values based on historical sequential data
+What is stationarity in time series?,"Statistical properties don't change over time (mean, variance constant)"
+What is the ADF test?,Augmented Dickey-Fuller test for stationarity of time series
+What is neural architecture search (NAS)?,Automated search for optimal neural network architecture
+What is differentiable NAS (DARTS)?,Uses continuous relaxation and gradient descent for architecture search
+What is hardware-aware NAS?,Optimizes for inference speed on target device alongside accuracy
+What is the purpose of a learning rate warmup?,Avoid large unstable updates at start with randomly initialized weights
+What is the cosine learning rate decay formula?,lr = lr_min + 0.5*(lr_max-lr_min)*(1+cos(pi*step/total_steps))
+What is gradient penalty?,Adds penalty for gradient norm to enforce Lipschitz constraint in WGAN
+What is the Lipschitz constraint?,Restricts function's rate of change â€” used in WGAN for stable training
+What is spectral normalization?,Normalize weight matrices by their spectral norm for Lipschitz continuity
+What is layer normalization?,Normalizes across features for a single sample (vs batch norm across batch)
+What is instance normalization?,Normalizes each sample's spatial dimensions independently â€” used in style transfer
+What is group normalization?,Divides channels into groups and normalizes within each group
+What is AdaGrad optimizer?,Adapts learning rate per parameter using accumulated squared gradients
+What is RMSProp optimizer?,Like AdaGrad but uses exponential moving average to prevent shrinking LR
+What is AdamW optimizer?,Adam with decoupled weight decay â€” better generalization than standard Adam
+What is the weight decay decoupling in AdamW?,"Applies weight decay to weights directly, not through gradient (different from L2)"
+What is Lion optimizer?,Sign-based optimizer more memory-efficient than Adam
+What is the Prodigy optimizer?,Automatically estimates learning rate from data without tuning
+What is continual learning?,Model learns new tasks without forgetting previous ones (catastrophic forgetting)
+What is catastrophic forgetting?,Neural network forgets previous task when learning new task
+What is elastic weight consolidation (EWC)?,Penalizes changes to weights important for previous tasks
+What is replay-based continual learning?,Store samples from previous tasks and replay during new task training
+What is few-shot learning?,Learning to classify with very few labeled examples per class
+What is zero-shot learning?,Classify unseen classes using semantic descriptions without examples
+What is meta-learning?,Learning to learn â€” model adapts quickly to new tasks from few examples
+What is MAML (Model-Agnostic Meta-Learning)?,Finds initialization that adapts quickly to new tasks with few gradient steps
+What is contrastive learning?,"Learns representations by bringing similar examples close, pushing dissimilar apart"
+What is SimCLR?,Contrastive learning framework using augmented views of same image
+What is BYOL (Bootstrap Your Own Latent)?,Self-supervised learning without negative samples using online/target network
+What is Barlow Twins?,Self-supervised method reducing redundancy between embedding dimensions
+What is supervised contrastive learning?,Uses label information to group same-class samples in embedding space
+What is the bias in a neural network?,Learnable parameter added to weighted sum before activation
+What is the universal approximation theorem?,A feedforward network with one hidden layer can approximate any continuous function
+What is multi-task learning?,Training one model on multiple related tasks simultaneously
+What is semi-supervised learning?,Uses small labeled dataset and large unlabeled dataset together
+What is self-supervised learning?,"Creates labels from data itself (predict masked tokens, next frame)"
+What is the manifold hypothesis?,Real-world data lies on low-dimensional manifold in high-dimensional space
+What is inductive bias?,Assumptions built into learning algorithm that help generalize from training data
+What is the Occam's razor principle in ML?,Prefer simpler models when they explain data equally well
+What is a calibrated model?,Predicted probability 0.7 means 70% of such predictions are actually correct
+What is the F-beta score?,Weighted harmonic mean of precision and recall: beta>1 weights recall more
+What is stratified k-fold cross-validation?,Preserves class distribution in each fold â€” better for imbalanced datasets
+What is the imbalanced dataset problem?,"Model biased toward majority class â€” use oversampling, undersampling, or class weights"
+What is SMOTE?,Synthetic Minority Oversampling Technique creating synthetic minority samples
+What is class weight in ML?,Penalizes misclassification of minority class more during training
+What is the precision-recall tradeoff?,Increasing threshold raises precision but lowers recall and vice versa
+What is isotonic regression for calibration?,Non-parametric method mapping predicted scores to calibrated probabilities
+What is the dummy classifier?,"Baseline classifier using simple rules (most frequent, random) to compare against"
+What is the Matthews Correlation Coefficient?,Balanced metric for binary classification considering all four confusion matrix cells
+What is Cohen's kappa?,Measures agreement between predicted and actual labels accounting for chance
+What is the Brier score?,Mean squared error of probabilistic predictions â€” lower is better
+What is log loss (binary cross-entropy)?,Penalizes confident wrong predictions more than uncertain wrong ones
+What is the hinge loss?,"Used in SVM: max(0, 1 - y*f(x)) â€” zero loss for correct confident predictions"
+What is focal loss?,Down-weights easy examples so model focuses on hard cases (used in object detection)
+What is dice loss?,Overlap measure between predicted and true segmentation masks
+What is multi-label classification?,Each sample can belong to multiple classes simultaneously
+What is ordinal regression?,Predicts ordered categories (low/medium/high) respecting natural ordering
+What is regression to the mean?,Extreme observations tend to be followed by more average ones
+What is Pearson correlation limitation?,Only measures linear relationships â€” misses non-linear dependencies
+What is Spearman correlation?,Rank-based correlation detecting monotonic (not just linear) relationships
+What is the central limit theorem relevance to ML?,Large samples from any distribution have normally distributed means â€” justifies many ML assumptions
+What is gradient-free optimization?,"Evolutionary algorithms, particle swarm â€” no gradient needed"
+What is the lottery ticket hypothesis?,Dense networks contain sparse subnetworks (winning tickets) that train effectively alone
+What is magnitude pruning?,Remove weights with smallest absolute values for model compression
+What is structured pruning?,Remove entire filters/layers rather than individual weights
+What is quantization-aware training benefit?,Model learns to be robust to quantization during training â€” better accuracy than post-training
+What is the straight-through estimator?,Approximates gradient of discrete/non-differentiable operations for backprop
+What is neural network surgery?,"Modifying trained network architecture (add layers, change connections)"
+What is the purpose of a validation curve?,Shows how a hyperparameter affects train vs validation performance
+What is the double descent phenomenon?,"Test error decreases, then increases (classical overfitting), then decreases again with more params"
+What is grokking in deep learning?,Model suddenly generalizes long after achieving perfect training accuracy
+What is Simpson's paradox in ML?,Trend appears in groups but reverses when groups are combined â€” data aggregation issue
+What is causal inference vs correlation?,Causal: establishes cause-effect; Correlation: only association
+What is propensity score matching?,Controls for confounders in observational studies to estimate causal effect
+What is an instrumental variable?,Variable correlated with treatment but not outcome except through treatment â€” enables causal inference
+What is A/B testing in ML context?,Controlled experiment comparing two model versions on real users
+What is the multiple comparisons problem?,Running many statistical tests inflates false positive rate
+What is Bonferroni correction?,Divide significance threshold by number of tests to control family-wise error rate
+What is bootstrap confidence interval?,Resample data with replacement many times to estimate sampling distribution
+What is effect size in ML experiments?,Magnitude of difference between models â€” statistical significance doesn't guarantee practical importance
+What is Bayesian A/B testing?,Compute posterior probability one variant is better instead of p-values
+What is power analysis?,Determines minimum sample size needed to detect an effect with given probability
+What is the type I error (false positive)?,Rejecting null hypothesis when it's actually true
+What is the type II error (false negative)?,Failing to reject null hypothesis when it's actually false
+What is the p-value?,Probability of observing results as extreme as current ones if null hypothesis is true
+What is the reproducibility crisis relevance to ML?,"Many ML results don't reproduce due to random seeds, data splits, implementation details"
+What is the generalization gap?,Difference between training performance and test performance
+What is the Vapnik-Chervonenkis (VC) dimension?,Measure of capacity/expressiveness of a hypothesis class
+What is PAC learning?,Probably Approximately Correct â€” framework bounding generalization error
+What is the empirical risk minimization?,Minimize loss on training data as proxy for true risk minimization
+What is Rademacher complexity?,Measures model class's ability to fit random noise â€” bounds generalization error
+What is transfer learning benefit?,Pretrained features from source task accelerate learning on target task
+What is domain adaptation?,Transferring model from source domain to related target domain with distribution shift
+What is covariate shift?,Training and test input distributions differ but conditional label distribution is the same
+What is label shift (prior probability shift)?,Class distribution differs between train and test but P(x|y) is the same
+What is importance weighting for covariate shift?,Reweight training samples by ratio of test to train density to correct bias
+What is rejection sampling?,Generate samples from target distribution using easier proposal distribution
+What is the curse of dimensionality for density estimation?,Exponentially more data needed to cover high-dimensional space
+What is kernel density estimation (KDE)?,Non-parametric method estimating probability density using kernel functions
+What is the bandwidth parameter in KDE?,"Controls smoothness: small=wiggly (overfit), large=smooth (underfit)"
+What is model ensembling at test time?,Average predictions from multiple models for better accuracy and calibration
