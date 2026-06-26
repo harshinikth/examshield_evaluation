@@ -1,6 +1,10 @@
+import streamlit as st
 import pandas as pd
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
+
+# Page config - First line ah irukanum
+st.set_page_config(page_title="ExamShield", page_icon="📝", layout="wide")
 
 def get_marks_feedback(score):
     if score >= 80:
@@ -12,35 +16,58 @@ def get_marks_feedback(score):
     else:
         return 1, "Needs Improvement"
 
+# Title
+st.title("ExamShield - Auto Answer Evaluation 📝")
+st.markdown("---")
 
-print("Loading AI model... konjam wait pannu")
-model = SentenceTransformer('all-MiniLM-L6-v2')
+# Load model with spinner
+@st.cache_resource
+def load_model():
+    return SentenceTransformer('all-MiniLM-L6-v2')
 
+with st.spinner("Loading AI model... konjam wait pannu 🤖"):
+    model = load_model()
+st.success("Model loaded successfully!")
 
+# Load data
 model_df = pd.read_csv('dataset/model_answers.csv')
-student_df = pd.read_csv('dataset/student_answers.csv')
 
-print("ExamShield – Auto Answer Evaluation")
-print("=" * 40)
+# UI
+st.subheader("Evaluate Your Answer")
 
+question_list = model_df['question'].tolist()
+selected_question = st.selectbox("Select Question:", question_list)
+student_answer = st.text_area("Enter Your Answer:", height=150)
 
-for index, row in student_df.iterrows():
-    question = row['question']
-    student_ans = row['student_answer']
-    model_ans = model_df.loc[model_df['question'] == question, 'model_answer'].values[0]
-
-    
-    embeddings = model.encode([model_ans, student_ans])
-
-   
-    sim_score = cosine_similarity([embeddings[0]], [embeddings[1]])[0][0] * 100
-
-    
-    marks, feedback = get_marks_feedback(sim_score)
-
-    
-    print(f"Question: {question}")
-    print(f"Similarity Score: {round(sim_score,2)}%")
-    print(f"Marks: {marks}/5")
-    print(f"Feedback: {feedback}")
-    print("-" * 40)
+if st.button("Evaluate Answer", type="primary"):
+    if student_answer.strip() == "":
+        st.warning("Answer ah type pannu da!")
+    else:
+        # Get model answer
+        model_answer = model_df[model_df['question'] == selected_question]['model_answer'].values[0]
+        
+        # Calculate similarity
+        with st.spinner("Evaluating..."):
+            embeddings = model.encode([model_answer, student_answer])
+            sim_score = cosine_similarity([embeddings[0]], [embeddings[1]])[0][0] * 100
+            marks, feedback = get_marks_feedback(sim_score)
+        
+        # Show results
+        st.markdown("---")
+        st.subheader("Results:")
+        
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.metric("Similarity Score", f"{round(sim_score,2)}%")
+        with col2:
+            st.metric("Marks", f"{marks}/5")
+        with col3:
+            if marks >= 4:
+                st.success(f"**{feedback}**")
+            elif marks >= 3:
+                st.info(f"**{feedback}**")
+            else:
+                st.error(f"**{feedback}**")
+        
+        with st.expander("See Model Answer"):
+            st.write(model_answer)
