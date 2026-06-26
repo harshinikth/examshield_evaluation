@@ -26,22 +26,35 @@ def evaluate_answer(student_ans, q_id):
         return 0, max_score, ["❌ No answer provided"]
 
     # RULE 1: NEGATIVE KEYWORD CHECK - Opposite concept
-    if q_id == 4: # Supervised Learning
-        st.write(f"DEBUG: Q4 Check running. Answer: {student_lower}")  
-    if any(word in student_lower for word in ['unlabeled', 'unsupervised', 'without label']):
-        return 0, max_score, ["❌ Wrong! Supervised Learning uses LABELED data, not unlabeled data."]
-        
-    if q_id == 5: # Unsupervised Learning
-        if 'label' in student_lower and 'unlabel' not in student_lower:
+    def evaluate_answer(student_ans, q_id):
+    student_lower = student_ans.lower().strip()
+    max_score = 5
+    
+    # RULE 1: NEGATIVE KEYWORD CHECK - Q4 ku mattum
+    if q_id == 4:  # Supervised Learning
+        if 'unlabel' in student_lower or 'unsupervised' in student_lower or 'without label' in student_lower:
+            return 0, max_score, ["❌ Wrong! Supervised Learning uses LABELED data, not unlabeled data."]
+    
+    # RULE 2: NEGATIVE KEYWORD CHECK - Q5 ku mattum
+    if q_id == 5:  # Unsupervised Learning
+        if 'labeled' in student_lower or 'labelled' in student_lower or 'supervised' in student_lower:
             return 0, max_score, ["❌ Wrong! Unsupervised Learning uses UNLABELED data, not labeled data."]
-
-    # RULE 2: MANDATORY KEYWORD CHECK - List questions
-    if q_id == 3: # List 3 types of ML
-        required_keywords = ['supervised', 'unsupervised', 'reinforcement']
-        found = sum(1 for kw in required_keywords if kw in student_lower)
-        if found < 2:
-            return 0, max_score, [f"❌ Question asks to LIST 3 types. You mentioned {found}/3. Write: Supervised, Unsupervised, Reinforcement Learning."]
-
+    
+    # Normal scoring logic idhuku keezha varum
+    score = 0
+    justifications = []
+    
+    # Un code la irukura keyword matching logic inge podu
+    # Example:
+    if 'labeled' in student_lower and q_id == 4:
+        score += 5
+        justifications.append("✅ Correctly mentioned labeled data")
+    
+    if 'unlabel' in student_lower and q_id == 5:
+        score += 5
+        justifications.append("✅ Correctly mentioned unlabeled data")
+        
+    return score, max_score, justifications
     # RULE 3: SEMANTIC EVALUATION WITH HYBRID SCORING
     total_score = 0
     details = []
