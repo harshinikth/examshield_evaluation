@@ -2,7 +2,7 @@ question_id,question,key_point,marks,model_answer
 1,Define Artificial Intelligence,Explains simulation of human intelligence,2,Simulation of human intelligence by machines
 1,Define Artificial Intelligence,Mentions machines can think or learn,3,Machines that can think and learn
 2,What does ML stand for?,Mentions Machine Learning full form,2,ML stands for Machine Learning
-2,What does ML stand for?,Explains system learns from data without explicit programming,3,System that learns from data
+2,What does ML stand for?,example:classification
 3,List three types of Machine Learning,Names Supervised Learning,2,Supervised Learning
 3,List three types of Machine Learning,Names Unsupervised Learning,2,Unsupervised Learning
 3,List three types of Machine Learning,Names Reinforcement Learning,1,Reinforcement Learning
