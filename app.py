@@ -20,24 +20,28 @@ st.write("Meaning purunja marks. Opposite concept sonna 0.")
 def evaluate_answer(student_ans, q_id):
     q_rubric = rubrics[rubrics['question_id'] == q_id]
     max_score = q_rubric['marks'].sum()
-    
-    if not student_ans.strip():
+    student_lower = student_ans.lower().strip()
+
+    if not student_lower:
         return 0, max_score, ["❌ No answer provided"]
 
-    # NEGATIVE KEYWORD CHECK - Opposite concept check
-    student_lower = student_ans.lower()
-    
-    # Q4: Supervised Learning - "unlabeled" vandha wrong
-    if q_id == 4:
+    # RULE 1: NEGATIVE KEYWORD CHECK - Opposite concept
+    if q_id == 4: # Supervised Learning
         if any(word in student_lower for word in ['unlabel', 'unsupervised', 'without label']):
             return 0, max_score, ["❌ Wrong! Supervised Learning uses LABELED data, not unlabeled data."]
-    
-    # Q5: Unsupervised Learning - "labeled" vandha wrong 
-    if q_id == 5:
+
+    if q_id == 5: # Unsupervised Learning
         if 'label' in student_lower and 'unlabel' not in student_lower:
             return 0, max_score, ["❌ Wrong! Unsupervised Learning uses UNLABELED data, not labeled data."]
 
-    # Normal BERT Evaluation
+    # RULE 2: MANDATORY KEYWORD CHECK - List questions
+    if q_id == 3: # List 3 types of ML
+        required_keywords = ['supervised', 'unsupervised', 'reinforcement']
+        found = sum(1 for kw in required_keywords if kw in student_lower)
+        if found < 2:
+            return 0, max_score, [f"❌ Question asks to LIST 3 types. You mentioned {found}/3. Write: Supervised, Unsupervised, Reinforcement Learning."]
+
+    # RULE 3: SEMANTIC EVALUATION WITH HYBRID SCORING
     total_score = 0
     details = []
 
@@ -46,7 +50,7 @@ def evaluate_answer(student_ans, q_id):
         emb2 = model.encode(row['key_point'], convert_to_tensor=True)
         sim = util.pytorch_cos_sim(emb1, emb2).item()
 
-        if sim >= 0.45: # Strong match
+        if sim >= 0.45: # Full match
             total_score += row['marks']
             details.append(f"✅ {row['key_point']} | {row['marks']}/{row['marks']} | Sim: {sim:.2f} - Full Match")
         elif sim >= 0.35: # Partial match
@@ -58,12 +62,12 @@ def evaluate_answer(student_ans, q_id):
 
     return total_score, max_score, details
 
-# Main UI
+# MAIN UI
 grand_total = 0
 grand_max = 0
 all_scores = []
 
-st.info("Logic: >0.45 = Full marks | 0.35-0.45 = Half marks | Opposite concept = 0 marks")
+st.info("Logic: >0.45 = Full marks | 0.35-0.45 = Half marks | Opposite/List wrong = 0 marks")
 
 for q_id in sorted(rubrics['question_id'].unique()):
     q_text = rubrics[rubrics['question_id']==q_id]['question'].iloc[0]
@@ -84,14 +88,14 @@ for q_id in sorted(rubrics['question_id'].unique()):
         score = st.session_state[f"score_{q_id}"]
         detail = st.session_state[f"detail_{q_id}"]
         max_m = st.session_state[f"max_{q_id}"]
-        
+
         if score == max_m:
             st.success(f"Score: {score}/{max_m} 🎯")
         elif score > 0:
             st.warning(f"Score: {score}/{max_m} ⚡")
         else:
             st.error(f"Score: {score}/{max_m} ❌")
-            
+
         with st.expander("View Justification"):
             for d in detail: st.write(d)
 
@@ -105,7 +109,7 @@ if all_scores:
     st.header(f"Final Report: {grand_total} / {grand_max}")
     st.dataframe(pd.DataFrame(all_scores), use_container_width=True)
     st.progress(grand_total/grand_max if grand_max > 0 else 0)
-    
+
     percentage = (grand_total/grand_max)*100 if grand_max > 0 else 0
     if percentage >= 90:
         st.balloons()
