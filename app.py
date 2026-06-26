@@ -49,8 +49,8 @@ if st.button("Evaluate Answer"):
             key_embedding = model.encode(key_point, convert_to_tensor=True)
             similarity = util.pytorch_cos_sim(student_embedding, key_embedding).item()
             
-            # Threshold: if similarity > 0.6, award marks
-            if similarity > 0.6:
+            # Threshold: if similarity > 0.5, award marks
+            if similarity > 0.5:
                 total_marks += marks
                 feedback.append(f"✅ **{key_point}** → {marks}/{marks} marks | Similarity: {similarity:.2f}")
             else:
