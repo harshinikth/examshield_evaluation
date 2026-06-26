@@ -28,7 +28,7 @@ def evaluate_answer(student_ans, q_id):
     # RULE 1: NEGATIVE KEYWORD CHECK - Opposite concept
     if q_id == 4: # Supervised Learning
         st.write(f"DEBUG: Q4 Check running. Answer: {student_lower}")  
-    if any(word in student_lower for word in ['unlabel', 'unsupervised', 'without label']):
+    if any(word in student_lower for word in ['unlabeled', 'unsupervised', 'without label']):
         return 0, max_score, ["❌ Wrong! Supervised Learning uses LABELED data, not unlabeled data."]
         
     if q_id == 5: # Unsupervised Learning
