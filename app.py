@@ -5,7 +5,7 @@ from sentence_transformers import SentenceTransformer, util
 @st.cache_resource
 def load_model():
     return SentenceTransformer('all-MiniLM-L6-v2')
-
+    
 @st.cache_data
 def load_rubrics():
     return pd.read_csv("dataset/rubrics.csv")
