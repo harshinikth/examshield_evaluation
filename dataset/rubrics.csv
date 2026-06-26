@@ -1,7 +1,7 @@
 question_id,question,key_point,marks,model_answer
 1,What does ML stand for?,Mentions "Machine Learning" full form,2,ML stands for Machine Learning
-1,What does ML stand for?,Explains it is a system that learns from data,3,It is a system that learns from data to make decisions
-2,Which type of ML uses labeled data?,Mentions "Supervised Learning",2,Supervised Learning uses labeled data
-2,Which type of ML uses labeled data?,Gives example like classification or regression,3,Examples include classification and regression
-3,Which type of ML deals with unlabeled data?,Mentions "Unsupervised Learning",2,Unsupervised Learning deals with unlabeled data
-3,Which type of ML deals with unlabeled data?,Gives example like clustering,3,Examples include clustering and association
+1,What does ML stand for?,Explains it is a system that learns from data,3,A system that learns from data
+2,Explain supervised learning,Defines supervised learning with labeled data,5,Uses labeled data for training
+2,Explain supervised learning,Gives example like classification or regression,5,Like spam detection or house price prediction
+3,What is overfitting?,Defines memorizing training data including noise,5,Model learns noise in training data
+3,What is overfitting?,Mentions poor performance on new data,5,Fails on test data
